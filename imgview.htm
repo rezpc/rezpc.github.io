@@ -1,0 +1,46 @@
+<html>
+<script language="javascript" src="scripts/java_util.js"></script>
+
+
+<head>
+<link rel="stylesheet" type="text/css" href="scripts/main.css">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Image Viewer</title>
+</head>
+
+<body text="#CC0000">
+<script language="JavaScript">
+switch(queryField("src_id"))
+{
+   case "01": document.write('<script src="scripts/desc_01.js"><\/script>'); opt=1; break;
+   default: opt=0;
+}
+</script>
+<script language="JavaScript">
+switch(queryField("id"))
+{
+   case "G": loc = "/pic_gallery/pic_gallery" + queryField("img") + ".jpg"; break;
+   case "E": loc = "/event_gallery/event_gallery" + queryField("img") + ".jpg"; break;
+   default: loc = "/chapters/" + queryField("chapter") + "/member_img/member" + queryField("id") + "_" + queryField("img") + ".jpg";
+}
+
+document.write("<p align='center'><IMG SRC=" + loc + "></p>");
+
+//if(opt==1) 
+//{
+//   document.write("<blockquote>" + getDescription(queryField("item_desc")) + "</blockquote>");
+//}
+
+document.write("<p align='center'><img src='images/divider.gif' width='494'></p>"
++ "<p align='center'><a href='javascript:history.back()'>Back</a> | "
++ "<a href='main.htm' target='main'>Home</a></p>");
+</script>
+<script
+language="JavaScript" src="scripts/footer.js"></script>
+<noscript>
+
+
+<p>This website requires the use of javascript to view images, and your browser doesn't
+support it.</noscript> </p>
+</body>
+</html>
